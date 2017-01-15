@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.hariofspades.educorp.activities.Login">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="?attr/colorPrimary"
+            android:visibility="visible"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="EDUCORP"
+                android:textColor="@color/white" />
+            <com.hariofspades.incdeclibrary.IncDecCircular
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_weight="1"
+                app:textSize="54"
+                android:id="@+id/incdec"
+                app:textColor="@color/colorAccent"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                app:leftButtonColorTint="@color/colorPrimaryDark"
+                app:rightButtonColorTinit="@color/colorPrimaryDark"
+                app:leftDrawableTint="@color/colorAccent"
+                app:rightDrawableTint="@color/colorAccent"
+                app:leftDrawable="@drawable/ic_keyboard_arrow_left_black_24dp"
+                app:rightDrawable="@drawable/ic_keyboard_arrow_right_black_24dp"
+                />
+        </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:indeterminate="true"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/progressBar"/>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+</android.support.design.widget.CoordinatorLayout>

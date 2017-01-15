@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/cl_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/abl_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:fitsSystemWindows="true"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/ctb_dashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:contentScrim="@color/colorPrimary"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginTop="?actionBarSize"
+                            android:id="@+id/profile_pic"
+                            android:layout_centerHorizontal="true"
+                            app:civ_border_width="1dp"
+                            app:civ_border_color="@color/colorAccent" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:id="@+id/userName"
+                            android:fontFamily="sans-serif"
+                            android:textSize="18sp"
+                            android:textColor="@color/white"
+                            android:layout_below="@+id/profile_pic"
+                            android:gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="4dp"
+                            android:id="@+id/email"
+                            android:fontFamily="sans-serif"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"
+                            android:layout_below="@+id/userName"
+                            android:gravity="center_horizontal"/>
+                    </RelativeLayout>
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/transparent"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:behavior_overlapTop="75dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <include layout="@layout/appbook_layout"/>
+            </android.support.v4.widget.NestedScrollView>
+        </android.support.design.widget.CoordinatorLayout>
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_dashboard"
+        app:menu="@menu/activity_dashboard_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

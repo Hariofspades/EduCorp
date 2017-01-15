@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_linkedn"
+        android:icon="@drawable/linkedin"
+        android:title="LinkedIn" />
+    <item
+        android:id="@+id/nav_medium"
+        android:icon="@drawable/medium"
+        android:title="Medium" />
+    <item
+        android:id="@+id/nav_github"
+        android:icon="@drawable/github"
+        android:title="Github" />
+
+</menu>
